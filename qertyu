@@ -1,0 +1,58 @@
+valid = "false"
+totalprice = float(200.00)
+# the first 2 numbers are number of item and category. e.g. 0,0 is the first component and is in the case category. - (item number),(category)
+components = [[0,0,"case","A1","compact",float(75.00)],[1,0,"case","A2","tower",float(150.00)],[2,1,"RAM","B1","8GB",float(79.99)],[3,1,"RAM","B2","16GB",float(149.99)],[4,1,"RAM","B3","32GB",float(299.99)],[5,2,"main hard drive disk","C1","1TB HDD",float(49.99)],[6,2,"main hard drive disk","C2","2TB HDD",float(89.99)],[7,2,"main hard drive disk","C3","4TB HDD",float(129.99)]]
+while valid !="true":
+  print (components[0],components[1])
+  userinput_case = input("Which case would you like to input? Please use itemcode e.g. A1.")
+  if userinput_case == components[0][3]:
+    case = components[0]
+    valid = "true"
+    totalprice = totalprice + components[0][5]
+  elif userinput_case == components[1][3]:
+    case = components[1]
+    valid = "true"
+    totalprice = totalprice + components[1][5]
+  else: 
+    valid = "false"
+    print("That is not an itemcode, please try again (remember to use capitals).")
+while valid != "true1":
+  print(components[2],components[3],components[4])
+  userinput_RAM = input("Which RAM would you like to purchase?")
+  if userinput_RAM == components[2][3]:
+    RAM = components[2]
+    valid = "true1"
+    totalprice = totalprice + components[2][5]
+  elif userinput_RAM == components[3][3]:
+    RAM = components[3]
+    valid = "true1"
+    totalprice = totalprice + components[3][5]
+  elif userinput_RAM == components[4][3]:
+    RAM = components[4]
+    valid = "true1"
+    totalprice = totalprice + components[4][5]
+  else:
+    valid = "false"
+    print ("That is not an itemcode, please try again (remember to use capitals).")
+while valid != "true2":
+  print (components[5],components[6],components[7])
+  userinput_MHDD = input("What main hard drive disk would you like to use?(remember to use capitals)")
+  if userinput_MHDD == components[5][3]:
+    MHDD = components[5]
+    valid = "true2"
+    totalprice = totalprice + components[5][5]
+  elif userinput_MHDD == components[6][3]:
+    MHDD = components[6]
+    valid = "true2"
+    totalprice = totalprice + components[6][5]
+  elif userinput_MHDD == components[7][3]:
+    MHDD = components[7]
+    valid = "true2"
+    totalprice = totalprice + components[7][5]
+  else:
+    valid = "false"
+    print("That was incorrect please try again.")
+print("You have ordered the case:",case)
+print("You have ordered the random access memory:",RAM)
+print("You have ordered the main hard drive disk:",MHDD)
+print("The total you owe is: $",totalprice)
